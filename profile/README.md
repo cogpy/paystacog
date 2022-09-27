@@ -1,5 +1,5 @@
-# Paystack Open Source Software
-Welcome to the PaystackOSS, a repository containing:
+# Hi there 👋🏾
+Welcome to the Paystack Open Source Software (PaystackOSS), a collection of tools and resources for developers to build amazing payment experiences with Paystack. The repository currently contains:
 - Sample apps
 - Developer Tools
 - Plugins
