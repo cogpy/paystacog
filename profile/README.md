@@ -28,8 +28,6 @@ These are tools that allow developers to integrate faster:
 | [Paystack OpenAPI](https://github.com/PaystackOSS/openapi) | The OpenAPI spec of the Paystack API. You can use it to test out  our APIs or build developers tools | Live |
 | [Paystack Python](https://github.com/PaystackOSS/paystack-python) | Paystack Python client library | Live |
 | [Paystack Node](https://github.com/PaystackOSS/paystack-node) | Paystack Node client library | Live |
-| Paystack PHP | Paystack PHP client library | Coming soon |
-| Paystack Ruby | Paystack Ruby client library | Coming soon |
 
 ## Plugins
 We maintain an [integrations directory](https://paystack.com/integrations) for low-code and no-code platforms that integrates with Paystack:
