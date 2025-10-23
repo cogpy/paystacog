@@ -193,7 +193,7 @@ class OpenCogExecutor:
                         'state': issue.get('state'),
                         'created_at': issue.get('created_at')
                     }
-                    for issue in issues_data[:5]
+                    for issue in (issues_data[:5] if isinstance(issues_data, list) else [])
                 ]
             }
             
