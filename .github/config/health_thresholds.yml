@@ -1,0 +1,101 @@
+# OpenCog Health Monitor Thresholds Configuration
+# Defines thresholds for determining organization health status
+
+thresholds:
+  success_rate:
+    excellent: 95.0    # 95%+ success rate = excellent
+    good: 80.0         # 80-94% success rate = good  
+    warning: 60.0      # 60-79% success rate = warning
+    critical: 59.9     # <60% success rate = critical
+
+  repository_activity:
+    excellent: 90.0    # 90%+ repositories active = excellent
+    good: 70.0         # 70-89% repositories active = good
+    warning: 50.0      # 50-69% repositories active = warning
+    critical: 49.9     # <50% repositories active = critical
+
+  documentation_score:
+    excellent: 85.0    # 85%+ documentation coverage = excellent
+    good: 70.0         # 70-84% documentation coverage = good
+    warning: 50.0      # 50-69% documentation coverage = warning
+    critical: 49.9     # <50% documentation coverage = critical
+
+  execution_time:
+    excellent: 60      # <60 seconds = excellent
+    good: 120          # 60-120 seconds = good
+    warning: 300       # 120-300 seconds = warning
+    critical: 301      # >300 seconds = critical
+
+# Actions to take when thresholds are breached
+actions:
+  critical:
+    create_issue: true
+    issue_labels: ['health-monitor', 'critical', 'automated']
+    notify_team: true
+    
+  warning:
+    create_issue: false
+    update_badge: true
+    log_warning: true
+    
+  good:
+    update_badge: true
+    
+  excellent:
+    update_badge: true
+
+# Issue templates for different threshold breaches
+issue_templates:
+  critical_success_rate: |
+    ## 🚨 Critical: Low Orchestration Success Rate
+    
+    The OpenCog orchestration engine is experiencing a critically low success rate of **{success_rate}%**.
+    
+    **Threshold**: Success rate below {threshold}%
+    **Current Rate**: {success_rate}%
+    **Failed Actions**: {failed_actions}
+    
+    ### Immediate Actions Required:
+    - [ ] Review failed actions in the latest orchestration run
+    - [ ] Check GitHub API rate limits and permissions
+    - [ ] Verify network connectivity and service availability
+    - [ ] Review error logs for patterns
+    
+    ### Recent Failures:
+    {failure_details}
+    
+  critical_repository_activity: |
+    ## 🚨 Critical: Low Repository Activity
+    
+    A critically low percentage of repositories show recent activity (**{activity_rate}%**).
+    
+    **Threshold**: Activity rate below {threshold}%
+    **Current Rate**: {activity_rate}%
+    **Stale Repositories**: {stale_count}
+    
+    ### Actions Required:
+    - [ ] Review inactive repositories for archival
+    - [ ] Create maintenance schedule for active projects
+    - [ ] Identify repositories that need attention
+    - [ ] Consider consolidating similar projects
+    
+  critical_documentation: |
+    ## 🚨 Critical: Poor Documentation Coverage
+    
+    Documentation coverage is critically low at **{doc_score}%**.
+    
+    **Threshold**: Documentation score below {threshold}%
+    **Current Score**: {doc_score}%
+    **Repositories Needing Docs**: {needs_docs_count}
+    
+    ### Actions Required:
+    - [ ] Add descriptions to repositories without them
+    - [ ] Create comprehensive README files
+    - [ ] Implement documentation standards
+    - [ ] Set up documentation review process
+
+# Notification settings
+notifications:
+  slack_webhook: null  # Set if Slack notifications are desired
+  email_recipients: [] # List of email addresses for notifications
+  github_teams: []     # GitHub teams to mention in issues

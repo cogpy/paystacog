@@ -1,0 +1,56 @@
+# OpenCog Security Configuration
+# Defines security monitoring and enforcement policies
+
+security_policies:
+  repository_access:
+    require_2fa: true
+    default_branch_protection: true
+    required_reviews: 1
+    dismiss_stale_reviews: true
+    
+  vulnerability_management:
+    enable_security_alerts: true
+    enable_automated_security_fixes: true
+    vulnerability_severity_threshold: "medium"
+    
+  secrets_management:
+    scan_for_secrets: true
+    block_commits_with_secrets: true
+    
+  dependency_management:
+    enable_dependency_alerts: true
+    auto_update_dependencies: false
+    allowed_licenses:
+      - "MIT"
+      - "Apache-2.0" 
+      - "BSD-2-Clause"
+      - "BSD-3-Clause"
+      - "ISC"
+
+scanning:
+  code_scanning:
+    enabled: true
+    languages: ["javascript", "typescript", "python", "java", "go", "ruby", "php", "csharp"]
+    
+  secret_scanning:
+    enabled: true
+    push_protection: true
+    
+  dependency_review:
+    enabled: true
+    fail_on_severity: "high"
+
+compliance:
+  required_files:
+    - "README.md"
+    - "LICENSE"
+    - ".gitignore"
+    
+  recommended_files:
+    - "CONTRIBUTING.md"
+    - "SECURITY.md" 
+    - "CODE_OF_CONDUCT.md"
+
+notifications:
+  security_team: []  # GitHub usernames to notify about security issues
+  critical_severity_webhook: null  # Webhook URL for critical security alerts

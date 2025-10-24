@@ -1,0 +1,35 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# OpenCog orchestration temporary files
+opencog_actions.json
+orchestration_results.json
+opencog_report_*.json
+opencog_summary_*.json
+sync_data.json
+profile_update_result.json
+threshold_check_results.json
+health_dashboard/
+
+# GitHub Actions artifacts
+artifacts/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
