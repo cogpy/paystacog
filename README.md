@@ -13,3 +13,5 @@ This repository implements an **OpenCog-inspired orchestration engine** for inte
 - **Automated Orchestration**: Hourly intelligent analysis and optimization actions
 
 [📖 **Learn more about the OpenCog Orchestration System →**](./OPENCOG_ORCHESTRATION.md)
+# PaystackOSS Profile Repository
+This repository manages the public profile README for the [PaystackOSS](https://github.com/PaystackOSS) organization on GitHub. It contains the profile information, project listings, and resources for the Paystack Open Source Software initiative.
