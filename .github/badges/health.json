@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "label": "health",
+  "message": "unknown",
+  "color": "lightgrey",
+  "namedLogo": "github",
+  "logoColor": "white",
+  "style": "flat",
+  "cacheSeconds": 300,
+  "lastUpdated": "2025-10-25T06:15:09.726733"
+}
